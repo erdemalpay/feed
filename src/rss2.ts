@@ -145,6 +145,8 @@ export default (ins: Feed) => {
           item.author.push({ _text: author.email + " (" + author.name + ")" });
         }
       });
+    } else {
+      item.author = entry.author;
     }
     /**
      * Item Category
@@ -158,7 +160,7 @@ export default (ins: Feed) => {
     }
 
     if (entry.image) {
-      item.enclosure = { _attributes: { url: entry.image } };
+      item.image = entry.image;
     }
 
     base.rss.channel.item.push(item);
