@@ -146,7 +146,7 @@ export default (ins: Feed) => {
         }
       });
     } else {
-      item.author = entry.author;
+      item["dc:creator"] = entry.author;
     }
     /**
      * Item Category
@@ -185,4 +185,3 @@ const formatCategory = (category: Category) => {
     }
   };
 };
-
